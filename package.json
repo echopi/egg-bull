@@ -1,6 +1,6 @@
 {
-  "name": "egg-bull-queue",
-  "version": "1.2.1",
+  "name": "@ali/egg-bull",
+  "version": "1.0.0",
   "description": "Bull queue plugin for Egg.js.",
   "eggPlugin": {
     "name": "bull"
@@ -9,6 +9,9 @@
   "dependencies": {
     "@types/bull": "^3.3.10",
     "bull": "^3.3.10"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
   },
   "devDependencies": {
     "egg": "^2.0.0",
