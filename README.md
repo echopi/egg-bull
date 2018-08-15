@@ -18,7 +18,6 @@
 [download-image]: https://img.shields.io/npm/dm/egg-bull-queue.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-bull-queue
 
-[中文版](https://github.com/brickyang/egg-bull/blob/master/README.zh_CN.md)
 
 Plugin to handle jobs and messages with [Bull](https://github.com/OptimalBits/bull) in Egg.js.
 
@@ -27,7 +26,7 @@ Bull is a fast, reliable, Redis-based queue for Node.
 ## Install
 
 ```bash
-$ npm i egg-bull-queue --save
+$ npm i @ali/egg-bull --save
 ```
 
 If you use TypeScript:
@@ -40,9 +39,9 @@ $ npm i @types/bull --save-dev
 
 ```js
 // {app_root}/config/plugin.js
-exports.bull = {  // plugin name is 'bull'
+exports.bull = {
   enable: true,
-  package: 'egg-bull-queue', // package name is 'egg-bull-queue'
+  package: '@ali/egg-bull',
 };
 ```
 
@@ -90,6 +89,15 @@ app.bull.process(job => {
 });
 
 app.bull.add({ job1: 'this is a job' });
+```
+
+
+```js
+app.bull.get('q1').process(job => {
+  console.log(job.data, job1); // 'this is a job'
+});
+
+app.bull.get('q1').add({ job1: 'this is a job' });
 ```
 
 For Bull's api read [Reference](https://github.com/OptimalBits/bull/blob/master/REFERENCE.md#queueclose) for more details.
